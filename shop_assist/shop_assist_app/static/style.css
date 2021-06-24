@@ -1,0 +1,24 @@
+* {
+    margin: 0px auto;
+    padding: 0%;
+}
+
+#main {
+    width: 970px;
+    height: 800px;
+    background-color: darkslategrey;
+    border: 4px dotted magenta;
+    position: relative;
+    top: 55px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.product {
+    width: 200px;
+    display: inline;
+}
