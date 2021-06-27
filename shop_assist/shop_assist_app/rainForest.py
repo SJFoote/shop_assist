@@ -40,7 +40,7 @@ from lxml import etree
 
 
 URL = 'https://books.toscrape.com/?'
-page = requests.get(URL)
+page = request.get(URL)
 
 # soup = BeautifulSoup(page.content, 'html.parser')
 # dom = etree.HTML(str(soup))
