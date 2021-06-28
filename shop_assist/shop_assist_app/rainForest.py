@@ -46,7 +46,14 @@ page = requests.get(URL)
 # dom = etree.HTML(str(soup))
 # print(dom.xpath('//*[@id="mainContainer"]/div[5]/div/div[2]/div/div[1]/button/div[2]/div/p')[0].text)
 # print(soup.find_all("h3")[0].text)
-soup = BeautifulSoup(page.text, 'lxml')
-print("List of all books:")
-for heading in soup.select('a[href*="catalogue"]'):
-    print(heading.get('title'))
+
+
+
+def getTitles(request):
+    soup = BeautifulSoup(page.text, 'lxml')
+    bookList = []
+    for heading in soup.select('a[href*="catalogue"]'):
+        bookTitle = heading.get('title')
+        if bookTitle != None:
+            bookList.append(bookTitle)
+    return bookList
