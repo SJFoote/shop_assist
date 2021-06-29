@@ -48,5 +48,12 @@ page = requests.get(URL)
 # print(soup.find_all("h3")[0].text)
 soup = BeautifulSoup(page.text, 'lxml')
 print("List of all books:")
-for heading in soup.select('a[href*="catalogue"]'):
-    print(heading.get('title'))
+# for heading in soup.select('a[href*="catalogue"]'): #a is the html tag and brackets hold the 'class' to grab
+#     print(heading.get('title'))
+
+# for price in soup.select('p[class*="price_color"]'):
+#     print(price.get_text())
+
+for img in soup.findAll('div', {'class': 'image_container'}):
+    for image in img.findAll('img',src=True):
+        print (image['src'])
