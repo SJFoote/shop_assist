@@ -25,7 +25,7 @@ class BookManager(models.Manager):
         soup = BeautifulSoup(page.text, 'lxml')
         bookList = []
         for heading in soup.select('a[href*="catalogue"]'):
-            bookDescription = heading.get('description')
+            bookDescription = heading.get('description')#bookDescription = heading.get('p')?
             print(soup.description)
         return bookList
 
@@ -34,7 +34,7 @@ class BookManager(models.Manager):
         soup = BeautifulSoup(page.text, 'lxml')
         bookList = []
         for heading in soup.select('a[href*="catalogue"]'):
-            bookPrice = heading.get('price')
+            bookPrice = heading.get('price')#bookPrice = heading.get('int') bookPrice = heading.get('integer')?
             print(soup.price)
         return bookList
         #2
