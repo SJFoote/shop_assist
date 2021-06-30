@@ -7,6 +7,9 @@ urlpatterns = [
     path('login/', views.login),
     path('register/', views.register),
     path('checkout/', views.checkOut),
+    path('logout/', views.logout),
+    path('loginReg/', views.loginReg)
+    
 
     # redirects
 
