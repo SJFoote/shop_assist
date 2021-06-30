@@ -7,34 +7,13 @@
     <div id="main">
         <!-- for loop to print product id, will need to pass the 'products' object through context so that for loop can iterate through each on and display on page -->
         <div class="grid-container">
-                <!-- divs not in for loop to be deleted -->
-                <div class="product">
-                    <h3>{{bookList.0}}</h3>
-                    <img src="#" alt="add image id">
-                    <p>Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolor sit fuga nisi cum, dolorem suscipit consequatur cupiditate repellat tempore cumque necessitatibus aspernatur omnis veniam eligendi. Voluptatibus, est? Ullam, deserunt.</p>
-                    <p>Price: $0.place holder</p>
-                </div>
-                <div class="product">
-                    <h3>{{bookList.1}}</h3>
-                    <img src="#" alt="add image id">
-                    <p>Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolor sit fuga nisi cum, dolorem suscipit consequatur cupiditate repellat tempore cumque necessitatibus aspernatur omnis veniam eligendi. Voluptatibus, est? Ullam, deserunt.</p>
-                    <p>Price: $0.place holder</p>
-                </div>
-                <div class="product">
-                    <h3>{{bookList.2}}</h3>
-                    <img src="#" alt="add image id">
-                    <p>Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolor sit fuga nisi cum, dolorem suscipit consequatur cupiditate repellat tempore cumque necessitatibus aspernatur omnis veniam eligendi. Voluptatibus, est? Ullam, deserunt.</p>
-                    <p>Price: $0.place holder</p>
-                </div>
-                <!-- ^^^^ to be deleted -->
-        {% for product in products %}
-            <div class="product">
-                <img src="#" alt="add image id">
-                <p>Item Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolor sit fuga nisi cum, dolorem suscipit consequatur cupiditate repellat tempore cumque necessitatibus aspernatur omnis veniam eligendi. Voluptatibus, est? Ullam, deserunt.</p>
-                <p>Price: $0.place holder</p>
-
+            {% for i, j, k in bookslist %}
+            <div class="product"> 
+            <h3>{{i}}</h3>
+            <img src="https://books.toscrape.com/{{k}}" alt="{{i}}">
+            <p>Price: {{j}}</p>
             </div>
-            {% endfor %}
+            {% endfor %}             
         </div>
     </div>
 </body>
