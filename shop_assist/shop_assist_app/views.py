@@ -6,10 +6,15 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    
-    context = {    
-    "bookList" : Book.objects.getTitles(),
+    bookList = Book.objects.getTitles()
+    bookPrice = Book.objects.getPrice()
+    bookImage = Book.objects.getImage()
+    mylist = zip(bookList, bookPrice, bookImage)
+
+    context = {
+    "bookslist": mylist,     
     }
+
     return render(request, 'index.html', context)
 
 def loginReg(request):

@@ -15,11 +15,11 @@ def getBooks():
         if bookTitle != None:
             bookList.append(bookTitle)
     for price in soup.select('p[class*="price_color"]'):
-        print(price.get_text())
+        bookList.append(price.get_text())
 
     for img in soup.findAll('div', {'class': 'image_container'}):
         for image in img.findAll('img',src=True):
-            print (image['src'])
+            bookList.append(image['src'])
     return bookList
 
 print(getBooks())

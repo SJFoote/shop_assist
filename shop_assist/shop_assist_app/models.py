@@ -50,6 +50,7 @@ class UserManager(models.Manager):
 
 URL = 'https://books.toscrape.com/?'
 page = requests.get(URL)
+soup = BeautifulSoup(page.text, 'lxml')
 
 # Create your models here.
 class User(models.Model):
@@ -71,6 +72,19 @@ class BookManager(models.Manager):
                 bookList.append(bookTitle)
         print(len(bookList))
         return bookList
+
+    def getPrice(request):
+        bookPrice = []
+        for price in soup.select('p[class*="price_color"]'):
+            bookPrice.append(price.get_text())
+        return bookPrice
+
+    def getImage(request):
+        bookImage = []
+        for img in soup.findAll('div', {'class': 'image_container'}):
+            for image in img.findAll('img',src=True):
+                bookImage.append(image['src'])
+        return bookImage
 
 class Book(models.Model): 
     title = models.CharField(max_length = 255)
