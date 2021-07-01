@@ -52,6 +52,15 @@ URL = 'https://books.toscrape.com/?'
 page = requests.get(URL)
 
 # Create your models here.
+class User(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.TextField()
+    password = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    objects = UserManager()
+
 class BookManager(models.Manager):
     def getTitles(request):
         soup = BeautifulSoup(page.text, 'lxml')

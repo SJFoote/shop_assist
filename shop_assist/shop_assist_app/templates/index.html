@@ -3,7 +3,12 @@
 {% block content %}
 {% include "header.html" %}
 {% endblock %}
-
+{% csrf_token %}
+        {% if messages %}
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        {% endif %}
     <div id="main">
         <!-- for loop to print product id, will need to pass the 'products' object through context so that for loop can iterate through each on and display on page -->
         <div class="grid-container">

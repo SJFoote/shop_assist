@@ -39,7 +39,7 @@ def register(request):
     
 def login(request):
     if request.method == "GET":
-        return redirect('/')
+        return redirect('/loginReg')
     if not User.objects.authenticate(request.POST['email'], request.POST['password']):
         messages.error(request, 'Invalid Email/Password')
         return redirect('/loginReg')
