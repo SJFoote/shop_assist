@@ -9,9 +9,25 @@
                 <li>{{ message }}</li>
             {% endfor %}
         {% endif %}
+    <!-- for loop to print product id, will need to pass the products object through context so that for loop can iterate through each on and display on page -->
+    
     <div id="main">
-        <!-- for loop to print product id, will need to pass the 'products' object through context so that for loop can iterate through each on and display on page -->
+        
         <div class="grid-container">
+            {% for i, j, k in bookslist %}
+            <div class="card" style="width: 200px;">
+            <img class="card-img-top" style="height: 250px;" src="https://books.toscrape.com/{{k}}" alt="{{i}}">
+                <div class="card-body">
+                    <p class="card-text">{{i}} | {{j}}<p>
+                </div>
+            </div>
+            {% endfor %}             
+        </div> 
+    </div>
+</body>
+</html>
+
+        <!-- <div class="grid-container">
             {% for i, j, k in bookslist %}
             <div class="product"> 
             <h3>{{i}}</h3>
@@ -19,7 +35,4 @@
             <p>Price: {{j}}</p>
             </div>
             {% endfor %}             
-        </div>
-    </div>
-</body>
-</html>
+        </div>  -->

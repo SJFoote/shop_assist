@@ -20,9 +20,8 @@ def index(request):
 def loginReg(request):
     return render(request, "loginReg.html")
 
-def checkOut(request):
-    return render(request, 'checkout.html')
-
+def description(request):
+    return render(request, 'description.html')
 
 def register(request):
     if request.method == "GET":
